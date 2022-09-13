@@ -14,6 +14,7 @@ class guildMember:
         self.mainhandAP = mainhandAP
         self.awakeningAP = awakeningAP
         self.defensePower = defensePower
+        self.rank = rank
 
     def activate(self):
         #database gets self.name()
@@ -62,19 +63,33 @@ class validation:
                 charDict = creds.charInfo.find_one({"_id": infoDict["_id"]})
                 validation.rankValidation(charDict) 
             else:
-                print("No character found")
+                print("No character found!\n") #This is where we branch to join/create guild menu
         else:
-            print("ERROR: Wrong credentials!")
+            print("ERROR: Wrong credentials!\n")
             startup()
     
     def rankValidation(dict):
         """
         Takes in a dictionary containing all of the character information. 
         We will verify here their in game "ranking" and push that information to the main screen accordingly.
+        Main reasoning for this function is to output message on deactivated/banned rank.
         """
-        #TODO: PICK UP FROM HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        rank = dict["Rank:"]
-        pass
+
+        rank = dict["rank"]
+        if rank in menus.rankIssueMenu.keys():
+            if rank == "Banned":
+                print(menus.rankIssueMenu[rank])
+            else:
+                print(menus.rankIssueMenu[rank])
+                menuPrinter(menus.inactiveStatusMenu)
+                response = input() #This is where we branch to main menu
+        else:
+            mainMenu()
+        
+        return None
+
+def mainMenu(dict, rank):
+    menuPrinter(menus.mainMenu)
 
 
 def menuPrinter(x):
