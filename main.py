@@ -1,7 +1,7 @@
 #Import Dependencies
 from tracemalloc import start
 import menus
-import creds
+import creds #credentials file containing private keys
 import re
 from getpass import getpass
 

@@ -12,4 +12,4 @@ rankIssueMenu = {"Banned": "You have been banished from the guild, if you believ
 
 inactiveStatusMenu = {"1": "Request for reactivation", "2": "Drop guild"}
 
-mainMenu = {1: ""}
+mainMenu = {1: "Update Gear", 2: "Add Attendance", 3: "Request Leave", 4: "View Leave Requests", 5: "View Member Growth", 6: "Manage Officers", 7: "Ban Members", 8: "Remove Bans"}
