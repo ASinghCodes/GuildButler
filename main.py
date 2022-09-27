@@ -78,7 +78,9 @@ class validation:
         rank = dict["rank"]
         if rank in menus.rankIssueMenu.keys():
             if rank == "Banned":
-                print(menus.rankIssueMenu[rank])
+                print(menus.rankIssueMenu[rank]) # How are we handling someone banned from guild, if they are banned there should be a drop association button
+                menuPrinter(menus.bannedStatusMenu)
+                response = input()
             else:
                 print(menus.rankIssueMenu[rank])
                 menuPrinter(menus.inactiveStatusMenu)
